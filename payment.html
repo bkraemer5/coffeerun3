@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>Payment Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+</head>
+<body class="container">
+    <header>
+        <h1>Payment Form</h1>
+    </header>
+    <p>Required fields are followed by *.</p>
+    <section>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <form data-payment-form="payform">
+                    <h2>Contact Information</h2>
+                    <fieldset>
+                        <legend>Title</legend>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="title" value="Mr.">
+                                Mr.
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="title" value="Mrs.">
+                                Mrs.
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="title" value="Ms.">
+                                Ms.
+                            </label>
+                        </div>
+                    </fieldset>
+                    <div class="form-group">
+                        <label for="name">
+                            <span><br>Name: <strong>*</strong></span>
+                        </label>
+                        <input type="text" id="name" name="name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">
+                            <span>Email: <strong>*</strong></span>
+                        </label>
+                        <input type="text" id="email" name="email">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">
+                            <span>Password: <strong>*</strong></span>
+                        </label>
+                        <input type="text" id="password" name="password">
+                    </div>
+                    
+                    <h2>Payment Information</h2>
+                    <div class="form-group">
+                        <label for="cardType">
+                            <span><br>Card type: </span>
+                        </label>
+                        <select name="cardType" id="cardType">
+                            <option value="visa">Visa</option>
+                            <option value="mastercard">Mastercard</option>
+                            <option value="americanExpress">American Express</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="cardNumber">
+                            <span>Card number: <strong>*</strong></span>
+                        </label>
+                        <input type="text" id="name" name="cardNumber">
+                    </div>
+                    <div class="form-group">
+                        <label for="expirationDate">
+                            <span>Expiration date: <strong>*</strong></span>
+                        </label>
+                        <input type="date" id="date" name="expirationDate">
+                    </div>
+                    <br>
+                    <button type="submit" data-modal="#myModal" class="btn btn-outline-primary">submit payment</button>
+                    <div id="myModal" class="modal">
+                        <p data-payment-form="submitText">Thanks for clicking.</p>
+                        <a href="#" rel="modal:close">Close</a>
+                    </div>
+                </form>
+                <br>
+                <form action="/index.html">
+                    <button class="btn btn-outline-dark">Click here to order more items</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <script src="scripts/formhandler.js" charset="utf-8"></script>
+    <script src="scripts/datastore.js" charset="utf-8"></script>
+    <script src="scripts/truck.js" charset="utf-8"></script>
+    <script src="scripts/payment.js" charset="utf-8"></script>
+</body>
+</html>
